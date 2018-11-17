@@ -6,15 +6,34 @@ html, body, main {
 }
 body {
     font-family: 'Oswald', sans-serif;
+    background-color: #EEEEEE;
+
 }
 /* ----- HIDDEN ELEMENTS ----- */
 .hide {
     display: none;
 }
-/* ----- MAIN DIV STYLING ----- */
+/* ----- NAVIGATION ----- */
+.nav-bar {
+    /* nav bar postioning */
+    position:fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    /* nav bar styling */
+    background-color: #FFFD62;
+}
+.nav-list {
+    display: flex;
+    list-style-type:none;
+}
+.nav-bar li {
+    margin: 0 0 0 15px
+}
+
+/* ----- MAIN DIV ----- */
 main {
     /* main styling */
-    background-color: #EEEEEE;
     /* main positioning */
     text-align: center;
 }
@@ -25,7 +44,7 @@ main {
     background-position: center; 
     background-repeat: no-repeat;
     /* banner sizing and positioning */
-    margin: auto;
+    margin:  60px auto;
     width: 85vw;
     height: 35vw;
     padding: 5px;
@@ -49,10 +68,12 @@ main p { /* main div content stlying */
 } 
 .blk-arrow {
     /* arrow positioning */
-    position: absolute;
-    bottom: 0;
-    transform: translate(-50%, -50%); /* centers the black arrow in div */
+    display: block;
+    margin: auto;
     /* arrow styling */
     height: 100px;
     width: 150px;
+}
+.find-resources {
+    background: rgb(255, 255, 255);
 }
