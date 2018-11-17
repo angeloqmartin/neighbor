@@ -1,0 +1,58 @@
+/* ----- BODY STYLING ----- */
+html, body, main { 
+    width:100%; 
+    height:100%; 
+    margin:0;  
+}
+body {
+    font-family: 'Oswald', sans-serif;
+}
+/* ----- HIDDEN ELEMENTS ----- */
+.hide {
+    display: none;
+}
+/* ----- MAIN DIV STYLING ----- */
+main {
+    /* main styling */
+    background-color: #EEEEEE;
+    /* main positioning */
+    text-align: center;
+}
+.banner {
+    /* banner background img */
+    background-image: url("/Users/home/dev projects/neighbor/img/landPage-backgroud.png");
+    background-size: 100%;
+    background-position: center; 
+    background-repeat: no-repeat;
+    /* banner sizing and positioning */
+    margin: auto;
+    width: 85vw;
+    height: 35vw;
+    padding: 5px;
+}
+/* BANNER h1 TAG STYLING */
+h1 {
+    /* header positioning  */
+    height: 100%; 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    /* header styling  */
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16vw;
+    color: #FFFD62;
+}
+main p { /* main div content stlying */
+    margin: 40px auto 60px;
+    font-size: 2vw;
+} 
+.blk-arrow {
+    /* arrow positioning */
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%, -50%); /* centers the black arrow in div */
+    /* arrow styling */
+    height: 100px;
+    width: 150px;
+}
