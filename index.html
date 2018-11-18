@@ -17,34 +17,41 @@
             <li><a href="#get_invloved">GET INVOLVED</a></li>
         </ul>
     </nav>
-    <main id="landing_page">
+    <header id="landing_page">
         <div class="banner" role="banner">
             <h1>NEIGHBOR</h1>
         </div>
         <p>Taking on poverty one step at a time!<br>Neighbor allows those in need to find the nearby resources they need.</p>
-        <img class="blk-arrow" src="img/drawing-gif-arrow-3.gif" alt="black triangular arrow pointing down"> 
+        <img class="blk-arrow" src="img/drawing-gif-arrow-3.gif" alt="black triangular arrow pointing down">
+    </header>
+    <main id="find_resources">
+        <section class="find-resources">
+            <h2>Find Resources</h2>
+            <form class="find-resources-form">
+                <label>enter a five digit zip code</label>
+                <input id="postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" required/><br>
+                <fieldset class="select-resources">
+                    <legend>type of resources</legend>
+                    <label for="">
+                        <input type="radio" name="resource" value="food" required>
+                        food
+                    </label>
+                    <label for="">
+                        <input type="radio" name="resource" value="shelter" required>
+                        shelter
+                    </label>
+                </fieldset>
+                <button type="submit">locate resources</button>
+            </form>
+        </section>
+        <section id="get_invloved" class="get-invloved">
+            <h2>GET INVOLVED</h2>
+        </section>
     </main>
-    <section class="find-resources">
-        <h2>Find Resources</h2>
-        <form class="find-resources-form">
-            <label>enter a five digit zip code</label>
-            <input id="postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" required/><br>
-            <fieldset class="select-resources">
-                <legend>type of resources</legend>
-                <label for="">
-                    <input type="radio" name="resource" value="food" required>
-                    food
-                </label>
-                <label for="">
-                    <input type="radio" name="resource" value="shelter" required>
-                    shelter
-                </label>
-            </fieldset>
-            <button type="submit">locate resources</button>
-        </form>
-    </section>
-    <section id="get_invloved" class="get-invloved">
-        <h2>GET INVOLVED</h2>
-    </section>
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" 
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+    crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
