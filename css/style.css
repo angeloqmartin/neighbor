@@ -102,20 +102,51 @@ main {
     background: rgb(255, 255, 255);
     height: 100vh;
 }
-.find-resources-form {
-    width: 60%;
-    margin: auto;
-}
-/* ----- GET INVOLVED SECTION ----- */
-.get-invloved {
-    background-color: #FFFD62;
-    height: 100vh;
-}
-.get-invloved h2 {
-    height: 100%;
+.find-resources h2 {
+    height: 20%;
     display:flex;
     align-items: center;
     justify-content: center;
     font-size: 5em;
+}
+.find-resources-form {
+    border: solid black 1px;
+    text-align: center;
+    font-size: 2em;
+}
+.find-resources-form button{
+    margin-top: 20px;
+}
+
+/* ----- GET INVOLVED SECTION ----- */
+.get-invloved {
+    background-color: #FFFD62;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.find-events-form {
+    width: 50%;
+    font-size: 3em;
+    margin: auto;
+}
+
+.find-events-form h3 {
+    font-size: 4em;
     margin: 0;
+}
+
+.find-events-form label {
+    display: block;
+    margin: 10px 0 15px 0;
+}
+
+.find-events-form button {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.select-resources {
+    border: none;
 }
