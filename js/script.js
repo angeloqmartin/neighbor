@@ -4,6 +4,7 @@ function findResources(seletedResource,postalCode) {
     fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${seletedResource}+in+${postalCode}&key=AIzaSyAdmPI42OYNaII52yMjflpdaKH1Gqk1Fks`)
     .then(response => response.json())
     .then(responseJson => renderResources(responseJson))
+    .catch(err => console.log(err))
 }
 
 function hideElements() {
@@ -29,6 +30,7 @@ function generateResourceList(responseJson) {
 };
 
 function renderResources(responseJson) {
+    hideElements();
     $('.resourceResults').html(generateResourceList(responseJson));
     
 }

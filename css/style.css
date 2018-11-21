@@ -58,7 +58,7 @@ a:active {
 /* ----- PAGE HEADER ----- */
 .banner {
     /* banner background img */
-    background-image: url("/Users/home/dev projects/neighbor/img/landPage-backgroud.png");
+    background-image: url("https://raw.githubusercontent.com/weAreReign/neighbor/master/img/landPage-backgroud.png");
     background-size: 100%;
     background-position: center; 
     background-repeat: no-repeat;
@@ -101,21 +101,22 @@ main {
 .find-resources {
     background: rgb(255, 255, 255);
     height: 100vh;
-}
-.find-resources h2 {
-    height: 20%;
     display:flex;
     align-items: center;
     justify-content: center;
-    font-size: 5em;
 }
+.find-resources h2 {
+}
+
 .find-resources-form {
-    border: solid black 1px;
-    text-align: center;
     font-size: 2em;
+    text-align: center;
 }
-.find-resources-form button{
-    margin-top: 20px;
+
+.select-resources {
+    border: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* ----- GET INVOLVED SECTION ----- */
@@ -129,7 +130,6 @@ main {
 .find-events-form {
     width: 50%;
     font-size: 3em;
-    margin: auto;
 }
 
 .find-events-form h3 {
@@ -147,6 +147,3 @@ main {
     margin: 0 auto;
 }
 
-.select-resources {
-    border: none;
-}
