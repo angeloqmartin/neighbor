@@ -29,31 +29,31 @@
         <section class="find-resources">
             <form class="find-resources-form">
                 <h2>Find Resources</h2>
-                <label>enter zip code</label>
-                <input class="postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" required/><br>
                 <fieldset class="select-resources">
-                    <!-- <legend></legend> -->
-                    <label>select a resource</label>
+                    <legend>Enter zip code and find resources nearby</legend>
+                    <label>select resource:</label>
                     <select class="resource" name="resource=">
                         <option value="food+assistance">food</option>
                         <option value="homeless+shelter">shelter</option>
                     </select>
                 </fieldset>
-                <button type="submit">locate resources</button>
+                <label>location:</label>
+                <input class="postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" required/>
+                <button type="submit">search</button>
             </form>
         </section>
         <section id="get_invloved" class="get-invloved js-get-invloved">
             <form class="find-events-form">
-                <h3>GET INVOLVED</h3>
+                <h2>GET INVOLVED</h2>
                 <label>Enter zip code and find events to help out in your community</label><br>
-                <input class="postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" required/>
+                <input class="js-events-postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" required/>
                 <button type="submit" class="js-find-events">Find Events</button>
             </form>
         </section>
     </main>
     <div class="resourceResults"></div>
     <div class="js-eventResults"></div>
-    <!-- SCRIPTS -->
+    <!-- JS SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" 
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
     crossorigin="anonymous"></script>
