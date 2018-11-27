@@ -202,3 +202,13 @@ main {
         font-size: 17em;
     }
   }
+  @media screen and (max-height: 400px) {
+    body {
+        font-size: 0.9em
+    }
+  }
+  @media screen and (max-height: 390px) {
+    body {
+        font-size: 0.5em
+    }
+  }
