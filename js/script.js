@@ -28,15 +28,14 @@ function watchFindResourceForm() {
 function generateResourceList(responseJson) {
     const resourceName = responseJson.results.map(data => 
         `
-        <div class="tile">
-        <h3 role=heading>${data.name}<h3>
-            <div id="tile-title">
-            <p>address:<br><br>${data.formatted_address}</p>
-            </div>
+        <div class="grid">
+            <h3 role=heading>${data.name}</h3>
+            <p>${data.formatted_address}</p>
         </div> 
         `)
     return resourceName;
 };
+
 function renderResources(responseJson) {
     hideElements();
     $('.resourceResults').html(generateResourceList(responseJson));
