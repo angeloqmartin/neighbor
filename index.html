@@ -10,44 +10,44 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="nav-bar">
+    <nav class="nav-bar" role="navigation" aria-label="Main navigation">
         <ul class="nav-list">
             <li><a href="#landing_page">HOME</a></li>
             <li><a href="#find_resources">RESOURCES</a></li>
             <li><a href="#get_invloved">GET INVOLVED</a></li>
         </ul>
     </nav>
-    <header id="landing_page">
-        <div class="banner" role="banner">
+    <header id="landing_page" role="banner">
+        <div class="banner">
             <h1>NEIGHBOR</h1>
         </div>
         <p>Taking on poverty one step at a time!<br>Neighbor allows those in need to find the nearby resources they need.</p>
-        <a href="#find_resources"><img class="blk-arrow" src="img/drawing-gif-arrow-3.gif" alt="black triangular arrow pointing down">
+        <a href="#find_resources"><img class="blk-arrow" src="img/drawing-gif-arrow-3.gif" alt="black triangular arrow pointing down" role=img>
         </a>
     </header>
-    <main id="find_resources">
+    <main id="find_resources" role="main">
         <section class="find-resources">
-            <form class="find-resources-form">
-                <h2>Find Resources</h2>
-                <fieldset class="select-resources">
+            <form class="find-resources-form" role="form">
+                <h2 role=heading>Find Resources</h2>
+                <fieldset role=group class="select-resources">
                     <legend>Enter zip code and find resources nearby</legend>
                     <label>select resource:</label>
-                    <select class="resource" name="resource=">
-                        <option value="food+assistance">food</option>
-                        <option value="homeless+shelter">shelter</option>
+                    <select class="resource" name="resource=" role=listbox>
+                        <option for="resource" value="food+assistance" role="option">food</option>
+                        <option for="resource" value="homeless+shelter" role="option">shelter</option>
                     </select>
                 </fieldset>
                 <label>location:</label>
-                <input class="postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" required/>
-                <button type="submit">search</button>
+                <input class="postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" aria-label="area code" type="number" required/>
+                <button type="submit" role="button">search</button>
             </form>
         </section>
         <section id="get_invloved" class="get-invloved js-get-invloved">
-            <form class="find-events-form">
-                <h2>GET INVOLVED</h2>
+            <form class="find-events-form" role="form">
+                <h2 role=heading>GET INVOLVED</h2>
                 <label>Enter zip code and find events to help out in your community</label><br>
-                <input class="js-events-postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" required/>
-                <button type="submit" class="js-find-events">Find Events</button>
+                <input class="js-events-postalcode" type="text" pattern="[0-9]{5}" title="Five digit zip code" placeholder="postal code 00000" aria-label="area code" type="number" required/>
+                <button type="submit" class="js-find-events" role="button">Find Events</button>
             </form>
         </section>
     </main>

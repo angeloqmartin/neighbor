@@ -29,7 +29,7 @@ function generateResourceList(responseJson) {
     const resourceName = responseJson.results.map(data => 
         `
         <div class="tile">
-        <h3>${data.name}<h3>
+        <h3 role=heading>${data.name}<h3>
             <div id="tile-title">
             <p>address:<br><br>${data.formatted_address}</p>
             </div>
@@ -59,7 +59,7 @@ function generateEventsList(responseJson) {
         <div class="tile">
             <div id="tile-date"><h3>when:<br><br>${item.start_time}<h3></div>
             <div id="tile-title">
-                <h3>${item.venue_name}<h3>
+                <h3 role=heading>${item.venue_name}<h3>
                 <h3>${item.title}<h3>
                 <p>${item.city_name}, ${item.region_name}</p>
             </div>
