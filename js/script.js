@@ -59,8 +59,8 @@ function generateEventsList(responseJson) {
         <div class="tile">
             <div id="tile-date"><h3>when:<br><br>${item.start_time}<h3></div>
             <div id="tile-title">
-                <h3 role=heading>${item.venue_name}<h3>
-                <h3>${item.title}<h3>
+                <h3 role=heading>${item.venue_name}</h3>
+                <p>${item.title}</p>
                 <p>${item.city_name}, ${item.region_name}</p>
             </div>
             <a href="${item.url}" target="_blank">GET INVOLVED</a>
