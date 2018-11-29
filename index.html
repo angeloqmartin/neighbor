@@ -26,6 +26,12 @@
         </a>
     </header>
     <main id="find_resources" role="main">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Sorry nothing in your area, please try a different location</p>
+            </div>
+        </div>
         <section class="find-resources">
             <form class="find-resources-form" role="form">
                 <h2 role=heading>Find Resources</h2>
@@ -42,6 +48,7 @@
                 <button type="submit" role="button">search</button>
             </form>
         </section>
+        <div class="resourceResults js-resourceResults" id="resource-Results"></div>
         <section id="get_invloved" class="get-invloved js-get-invloved">
             <form class="find-events-form" role="form">
                 <h2 role=heading>GET INVOLVED</h2>
@@ -50,10 +57,9 @@
                 <button type="submit" class="js-find-events" role="button">Find Events</button>
             </form>
         </section>
+        <div class="js-eventResults" id="event-Results"></div>
     </main>
-    <div class="resourceResults"></div>
-    <div class="js-eventResults"></div>
-    <!-- JS SCRIPTS -->
+        <!-- JS SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" 
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
     crossorigin="anonymous"></script>

@@ -1,30 +1,49 @@
 "use strict";
 
+// display message in modal notfiying user 
+// there is nothing in their area
+function noEventsToReturn() {
+    $('.modal').css("display","block");
+}
+// closes modal box if user
+// clicks close btn (X) 
+// or if user clicks window
+function closeModal() {
+    $('.close').click(function() {
+        $('.modal').css("display","none");
+    });
+    $(window).click(function(e){
+        $('.modal').css("display","none");
+    });
+};
+// removes all results to in order
+// to keep page from getting lengthy 
+function removeResults() {
+    $('.js-eventResults').empty();
+    $('.js-resourceResults').empty();
+}
 function findResources(seletedResource,postalCode) {
     fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=${seletedResource}+in+${postalCode}&key=AIzaSyAdmPI42OYNaII52yMjflpdaKH1Gqk1Fks`)
     .then(response => response.json())
-    .then(responseJson => renderResources(responseJson))
+    .then(responseJson => returnResources(responseJson))
     .catch(err => console.log(err))
 }
-function hideElements() {
-    $('main').addClass('hide');
-    $('header').addClass('hide');
-}
-// handles click function on the the navigation a tags
-$(".nav-list a").click(function() {
-    $('.js-eventResults').addClass('hide');
-    $('.resourceResults').addClass('hide');
-    $('main').removeClass('hide');
-    $('header').removeClass('hide');
-})
 function watchFindResourceForm() {
     $(".find-resources-form").on("submit", (e) => {
-        $('.resourceResults').removeClass('hide');
+       $('.js-resourceResults').empty();
         e.preventDefault();
         let postalCode = $('.postalcode').val();
         const seletedresource = $(".resource").val();
+        removeResults();
         findResources(seletedresource, postalCode);
 })}
+function returnResources(responseJson) {
+    if (responseJson.status === "ZERO_RESULTS") {
+        return  noEventsToReturn();
+    } else {
+        return renderResources(responseJson);
+    }
+};
 function generateResourceList(responseJson) {
     const resourceName = responseJson.results.map(data => 
         `
@@ -35,23 +54,30 @@ function generateResourceList(responseJson) {
         `)
     return resourceName;
 };
-
 function renderResources(responseJson) {
-    hideElements();
-    $('.resourceResults').html(generateResourceList(responseJson));
+    $('.js-resourceResults').html(generateResourceList(responseJson));
+    location.hash="#resource-Results";
 }
 function findEvents(postalCode) {
     fetch(`https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?q=volunteer%20homeless&l=${postalCode}&within=50&units=miles&app_key="3RM2NQ6NFX4bJkg4"`)
     .then(response => response.json())
-    .then(responseJson => renderEvents(responseJson))
+    .then(responseJson => returnEvents(responseJson))
+    .catch(err => console.log(err))
 }
 function watchFindEventsForm() {
     $(".find-events-form").on("submit", (e) => {
-        $('.js-eventResults').removeClass('hide');
-        e.preventDefault();
         const postalCode = $('.js-events-postalcode').val();
+        e.preventDefault();
+        removeResults();
         findEvents(postalCode);
 })}
+function returnEvents(responseJson) {
+    if (responseJson.events === null) {
+        return  noEventsToReturn();
+    } else {
+        return renderEvents(responseJson);
+    }
+};
 function generateEventsList(responseJson) {
     const eventsList = responseJson.events.event.map(item =>
         `
@@ -65,14 +91,14 @@ function generateEventsList(responseJson) {
             <a href="${item.url}" target="_blank">GET INVOLVED</a>
         </div> 
         `)
-
     return eventsList
 }
 function renderEvents(responseJson) {
-    hideElements();
     $('.js-eventResults').html(generateEventsList(responseJson));
+    location.hash="#event-Results";
 }
 $(function () {
+    closeModal();
     watchFindResourceForm();
     watchFindEventsForm();
 });
